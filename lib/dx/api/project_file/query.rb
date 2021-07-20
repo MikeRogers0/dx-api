@@ -19,7 +19,12 @@ module DX
               folder: folder,
               recurse: true,
             },
-            describe: true,
+            describe: {
+              defaultFields: true,
+              fields: {
+                properties: true
+              }
+            },
             class: 'file',
           }.tap do |hash|
             add_starting_at(hash) unless starting_at.nil?
