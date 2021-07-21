@@ -16,11 +16,14 @@ module DX
             folder: describe.fetch('folder'),
             archival_state: describe.fetch('archivalState'),
             media: describe.fetch('media'),
-            properties: describe.fetch('properties')
+            properties: describe.fetch('properties'),
+            details: describe.fetch('details'),
+            parts: describe.fetch('parts'),
+            tags: describe.fetch('tags'),
           )
         end
 
-        attr_reader :project_id, :id, :name, :state, :folder, :archival_state, :media, :properties
+        attr_reader :project_id, :id, :name, :state, :folder, :archival_state, :media, :properties, :details, :parts, :tags
 
         # A project file description.
         # https://documentation.dnanexus.com/developer/api/introduction-to-data-object-classes/files#api-method-file-xxxx-describe
@@ -32,7 +35,7 @@ module DX
         # @param state [String] The value "open", "closing", or "closed"
         # @param archival_state [String] The archival state of the file
         # @param media [String] The Internet Media Type of the file
-        def initialize(project_id:, id:, name:, folder:, state:, archival_state:, media:, properties:)
+        def initialize(project_id:, id:, name:, folder:, state:, archival_state:, media:, properties:, details:, parts:, tags:)
           @project_id = project_id
           @id = id
           @name = name
@@ -40,6 +43,9 @@ module DX
           @archival_state = archival_state
           @media = media
           @properties = properties
+          @details = details
+          @parts = parts
+          @tags = tags
         end
       end
     end

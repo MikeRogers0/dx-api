@@ -22,7 +22,9 @@ module DX
             describe: {
               defaultFields: true,
               fields: {
-                properties: true
+                properties: true,
+                details: true,
+                parts: true
               }
             },
             class: 'file',
