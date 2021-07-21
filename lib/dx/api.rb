@@ -15,7 +15,13 @@ require 'dx/api/version'
 
 module DX
   module Api
-    HOST_NAME = 'https://api.dnanexus.com'
+    def self.host_name=(value)
+      @host_name = value
+    end
+
+    def self.host_name
+      @host_name || "https://api.dnanexus.com"
+    end
 
     class Error < StandardError; end
 
