@@ -31,6 +31,17 @@ DX::Api::Search.find_data_objects(
 )
 ```
 
+### Configuration
+
+If your DNAnexus endpoint is different from the default (`https://api.dnanexus.com`), you can override its value like this:
+
+```ruby
+# config/initializers/dx_api.rb
+
+# Default: https://api.dnanexus.com
+DX::Api.host_name = "https://custom-api.dnanexus.com"
+```
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.

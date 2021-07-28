@@ -15,7 +15,19 @@ require 'dx/api/version'
 
 module DX
   module Api
-    HOST_NAME = 'https://api.dnanexus.com'
+    # Sets the host name used for API calls
+    #
+    # @param value [String] The API host
+    def self.host_name=(value)
+      @host_name = value
+    end
+
+    # Returns the host name used for API calls.
+    #
+    # Default: https://api.dnanexus.com
+    def self.host_name
+      @host_name || "https://api.dnanexus.com"
+    end
 
     class Error < StandardError; end
 

@@ -8,8 +8,6 @@ module DX
   module Api
     # A helper class to create and make http requests to the DNAnexus API
     class Request
-      HOST_NAME = 'https://api.dnanexus.com'
-
       extend Forwardable
 
       attr_reader :api_token,
@@ -25,7 +23,7 @@ module DX
       # @param body [Hash] The request payload
       def initialize(api_token:, path:, body: {})
         @api_token = api_token
-        @uri = URI([HOST_NAME, path].join('/'))
+        @uri = URI([DX::Api.host_name, path].join('/'))
         @body = body.to_json
       end
 
